@@ -154,6 +154,7 @@ Comments: {}""".format((index + 1),
             if options.lower() == 'd' or options.lower() == 'delete':
                 self.active_log.remove(self.display_list[index])
                 self.save()
+                self.display_list.remove(self.display_list[index])
             elif options.lower() == 'e' or options.lower() == 'edit':
                 self.active_log.remove(self.display_list[index])
                 self.save()
@@ -237,7 +238,10 @@ Comments: {}""".format((index + 1),
                 else:
                     break
             else:
-                comments = comments + '\n' + new_comment
+                if comments == "":
+                    comments = comments + new_comment
+                else:
+                    comments = comments + '\n' + new_comment
 
         entry = {"date": date, "duration": duration, "task": task, "comments": comments, "ID": id_now}
         self.active_log.append(entry)
@@ -318,7 +322,10 @@ Press enter to continue""".format(entry_date, **entry))
                 else:
                     break
             else:
-                comments = comments + '\n' + new_comment
+                if comments == "":
+                    comments = comments + new_comment
+                else:
+                    comments = comments + '\n' + new_comment
 
         entry = {"date": date, "duration": duration, "task": task, "comments": comments, "ID": previous_entry["ID"]}
         self.active_log.append(entry)
@@ -347,7 +354,7 @@ Press enter to continue""".format(entry_date, **entry))
     def search_string(self, field):
         """
         searches for a string of characters or regex in a specified "field" of all worklog entries (default)
-        alternatively searches for an exact match "equivalence"
+        alternatively searches for an exact match not case sensitive
         :param field: dict key for an entry eg "task"
         :return: None
         """
@@ -363,7 +370,7 @@ Press enter to continue""".format(entry_date, **entry))
 
         for entry in self.active_log:
             if match:
-                if find == entry[field]:
+                if re.match(find, entry[field], flags=re.IGNORECASE):
                     self.display_list.append(entry)
             else:
                 if re.search(find, entry[field], flags=re.IGNORECASE):

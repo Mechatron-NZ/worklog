@@ -1,30 +1,19 @@
 date,duration,task,comments,ID
-1424343600.0,250,ENZA maintainance,"
-cool store 3",1475707854.0
-1420023600.0,50,commissioning,"
-NPI",1475707792.0
-1419505200.0,600,site visit,"
-Christmas Shut
+1424343600.0,250,ENZA maintainance,cool store 3,1475707854.0
+1420023600.0,50,commissioning,NPI,1475707792.0
+1419505200.0,600,site visit,"Christmas Shut
 NPI",1475707691.0
-1417431600.0,400,Mechanical Drawings,"
-Issued for Approval NPI: TBC",1475706875.0
-1416394800.0,45,downtime plan,"
-press 1
+1417431600.0,400,Mechanical Drawings,Issued for Approval NPI: TBC,1475706875.0
+1416394800.0,45,downtime plan,"press 1
 line 1
 steam",1475706821.0
-1415617200.0,120,HAZOP QBH,"
-see shair point for meeting minutes.
+1415617200.0,120,HAZOP QBH,"see shair point for meeting minutes.
 see 15281-HAZ-rev2.pdf",1475706653.0
-1414839600.0,500,Mechanical Drawings,"
-GA
+1414839600.0,500,Mechanical Drawings,"GA
 Infeed
 parts drawings",1475705693.0
-1414753200.0,30,client meeting,"
-NPI Christmas Shut",1475706750.0
-1413716400.0,350,Electrical Drawings,"
-QBH Infeed area",1475705606.0
-1412506800.0,45,quote,"
-QBH",1475705479.0
-1412161200.0,60,Client Meeting,"
-QBH expansion project
+1414753200.0,30,client meeting,NPI Christmas Shut,1475706750.0
+1413716400.0,350,Electrical Drawings,QBH Infeed area,1475705606.0
+1412506800.0,45,quote,QBH,1475705479.0
+1412161200.0,60,Client Meeting,"QBH expansion project
 scope of works ",1475705362.0
