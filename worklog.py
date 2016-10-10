@@ -155,6 +155,11 @@ Comments: {}""".format((index + 1),
                 self.active_log.remove(self.display_list[index])
                 self.save()
                 self.display_list.remove(self.display_list[index])
+                if len(self.display_list) == 0:  # checks to see if the search list is empty (no matches)
+                    clear_screen()
+                    input("Nothing to display press enter to return to main menu: ")
+                    return None
+
             elif options.lower() == 'e' or options.lower() == 'edit':
                 self.active_log.remove(self.display_list[index])
                 self.save()
@@ -186,15 +191,16 @@ Comments: {}""".format((index + 1),
         :return: None
         """
 
-        id_now = datetime.datetime.now()
-        id_now = time.mktime(id_now.timetuple())  # generate a unique ID from the time stamp of now
+        id_now = datetime.datetime.now().timetuple()
+        id_now = time.mktime(id_now)  # generate a unique ID from the time stamp of now
+
 
         while True:
             date_text = input(
                 "please enter a date for the task {} leave blank for today: ".format(self.date_str))
             self.keywords(date_text)
             if date_text == "":
-                date = datetime.datetime.now().timetuple()
+                date = datetime.date.today().timetuple()
                 date = time.mktime(date)
                 break
             else:
